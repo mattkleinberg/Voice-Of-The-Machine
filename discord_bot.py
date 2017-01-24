@@ -1,6 +1,6 @@
 import discord
 import asyncio
-from tokens import dt
+import tokens
 
 
 client = discord.Client()
@@ -25,4 +25,4 @@ async def on_voice_state_update(before, after):
         tmp = await client.send_message(server, msg, tts=True)
         await client.delete_message(tmp)
 
-client.run(token)
+client.run(tokens.dt)
