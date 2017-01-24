@@ -36,6 +36,7 @@ var/
 pip-log.txt
 pip-delete-this-directory.txt
 tokens.py
+critcal_role/tokens.py
 
 # Unit test / coverage reports
 htmlcov/

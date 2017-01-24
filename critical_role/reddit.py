@@ -23,7 +23,7 @@ class RedditBot:
 		rules = self.r.subreddit('criticalrole').rules()
 		print(rules)
 
-	def get_time_till_cr(self, ts):
+	def get_time_till_cr(self):
 		# still needs work
 		today = datetime.datetime.now()
 		next_thurs = today + datetime.timedelta((3-today.weekday())%7)

@@ -1,7 +1,6 @@
 import discord
 import asyncio
 import tokens
-from critical_role.reddit import RedditBot
 
 
 client = discord.Client()
@@ -12,11 +11,6 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-
-@client.event
-async def on_message(message):
-    if message.content.startswith('!test'):
-        RedditBot().get_time_till_cr(message.timestamp)
 
 @client.event
 async def on_voice_state_update(before, after):
