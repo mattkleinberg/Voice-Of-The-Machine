@@ -24,7 +24,7 @@ async def on_message(message):
             usr_p = phon.add_phon(str(message.author), sp)
             await client.send_message(message.server, usr_p)
         else:
-            await client.send_message(message.server, 'Command does not match format. Format is !phonetic: YOUR TEXT HERE')
+            await client.send_message(message.server, 'Command does not match format. Format is !phonetic_add: YOUR TEXT HERE')
 
     if message.content.startswith('!phonetic_remove'):
         phon = phonetic.Phonetic()
