@@ -16,17 +16,17 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!phonetic_add'):
-        r = re.compile('!phonetic_add: .*')
+    if message.content.startswith('!callme'):
+        r = re.compile('!callme: .*')
         if r.match(message.content) is not None:
-            sp = message.content.split('!phonetic_add: ', 1)[1]
+            sp = message.content.split('!callme: ', 1)[1]
             phon = phonetic.Phonetic()
             usr_p = phon.add_phon(str(message.author), sp)
             await client.send_message(message.server, usr_p)
         else:
-            await client.send_message(message.server, 'Command does not match format. Format is !phonetic_add: YOUR TEXT HERE')
+            await client.send_message(message.server, 'Command does not match format. Format is !callme: YOUR TEXT HERE')
 
-    if message.content.startswith('!phonetic_remove'):
+    if message.content.startswith('!callme_remove'):
         phon = phonetic.Phonetic()
         stats = phon.del_phon(str(message.author))
         await client.send_message(message.server, stats)

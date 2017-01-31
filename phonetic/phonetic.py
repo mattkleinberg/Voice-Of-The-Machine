@@ -46,7 +46,7 @@ class Phonetic:
 					}
 					yaml.dump(data, nf, default_flow_style=False)
 
-			return 'Phonetic name {0}. I will now call you {1}'.format(m, phonetic_sp)
+			return 'Name {0}. I will now call you {1}'.format(m, phonetic_sp)
 		except Exception:
 			return 'There was an error. Please try again later.'
 
@@ -59,6 +59,6 @@ class Phonetic:
 				with open(self.name_file, 'w') as rmv:
 					del name_list[name]
 					yaml.dump(name_list, rmv, default_flow_style=False)
-				return 'Your phonetic name has been removed. You will now to refered to by your default name.'
+				return 'Your name has been removed. You will now to refered to by your default name.'
 		
-		return 'You do not have a phonetic name to remove. If you would like to add one please use: !phonetic_add: YOUR TEXT HERE'
+		return 'You do not have a name to remove. If you would like to add one please use: !callme: YOUR TEXT HERE'
